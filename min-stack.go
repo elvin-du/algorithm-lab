@@ -2,31 +2,54 @@
 package algorithm_lab
 
 type MinStack struct {
+	min   int
+	stack *Stack
 }
 
 /** initialize your data structure here. */
 func Constructor() MinStack {
-	s := MinStack{}
+	s := MinStack{stack: NewStack(100)}
 	return s
 }
 
 func (this *MinStack) Push(x int) {
+	if this.stack.Size() == 0 {
+		this.min = x
+		this.stack.Push(x)
+		return
+	}
 
-	panic("not implemented")
+	//这里是关键；用于存储上一次的最小值。
+	//如果相等也需要存储，因为pop的时候，需要弹出
+	if x <= this.min {
+		this.stack.Push(this.min)
+		this.stack.Push(x)
+		this.min = x
+		return
+	}
+
+	this.stack.Push(x)
 }
 
 func (this *MinStack) Pop() {
+	x := this.stack.Pop().(int)
+	if x == this.min {
+		//已经到底了
+		if this.stack.Size() == 0 {
+			return
+		}
 
-	panic("not implemented")
+		x2 := this.stack.Pop().(int)
+		this.min = x2
+	}
 }
 
 func (this *MinStack) Top() int {
-	panic("not implemented")
+	return this.stack.Top().(int)
 }
 
 func (this *MinStack) GetMin() int {
-
-	panic("not implemented")
+	return this.min
 }
 
 /**

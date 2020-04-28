@@ -9,7 +9,7 @@ func NewQueue() *Queue {
 }
 
 func (q *Queue) Push(e interface{}) {
-	q.List.PushFront(e)
+	q.List.PushBack(e)
 }
 
 func (q *Queue) Pop() interface{} {

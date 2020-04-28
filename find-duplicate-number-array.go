@@ -1,3 +1,4 @@
+//剑指offer 从数组中找出第一个重复的数字
 package algorithm_lab
 
 func FindDuplicateNumberInArray(arr []int) int {

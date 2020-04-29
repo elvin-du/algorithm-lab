@@ -1,6 +1,7 @@
 package algorithm_lab
 
 import (
+	"fmt"
 	"reflect"
 )
 
@@ -12,6 +13,15 @@ type List struct {
 
 func NewList() *List {
 	return &List{}
+}
+
+func (l *List) String() string {
+	str := ""
+	node := l.Head
+	for ; node != nil; node = node.Next {
+		str += fmt.Sprintf("%v", node.Value)
+	}
+	return str
 }
 
 func (l *List) PushBack(e interface{}) {

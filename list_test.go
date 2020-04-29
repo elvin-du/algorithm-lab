@@ -31,3 +31,12 @@ func TestList(t *testing.T) {
 	assert.Equal(t, 6, list2.Get(0))
 	assert.Equal(t, 3, list2.Get(5))
 }
+
+func TestList_String(t *testing.T) {
+	l := NewList()
+	l.PushFront(1)
+	l.PushFront(2)
+	l.PushFront(3)
+	l.PushFront(4)
+	assert.Equal(t, "4321", l.String())
+}

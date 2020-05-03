@@ -36,3 +36,16 @@ func ReverseList(head *ListNode_ForReverse) *ListNode_ForReverse {
 
 	return pre
 }
+
+func ReverseListByRecursion(head *ListNode_ForReverse) *ListNode_ForReverse {
+	if IsNil(head) || IsNil(head.Next) {
+		return head
+	}
+
+	newList := ReverseListByRecursion(head.Next)
+
+	head.Next.Next = head
+	head.Next = nil
+
+	return newList
+}

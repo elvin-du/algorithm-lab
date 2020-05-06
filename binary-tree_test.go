@@ -21,3 +21,24 @@ func TestBinaryTree(t *testing.T) {
 	assert.Equal(t, "1,2,3,4,5,6,7", bt.BFS())
 	assert.Equal(t, "1245367", bt.PreOrder())
 }
+
+func TestBinaryTree_BFS2(t *testing.T) {
+	bt := NewBinaryTree()
+	root := NewBinaryTreeNode(1)
+	root.SetLeft(NewBinaryTreeNode(2))
+	root.SetRight(NewBinaryTreeNode(3))
+
+	root.Left.SetLeft(NewBinaryTreeNode(4))
+	root.Left.SetRight(NewBinaryTreeNode(5))
+
+	root.Right.SetLeft(NewBinaryTreeNode(6))
+	root.Right.SetRight(NewBinaryTreeNode(7))
+	bt.Root = root
+
+	assert.Equal(t,
+		[][]interface{}{
+			[]interface{}{1},
+			[]interface{}{2, 3},
+			[]interface{}{4, 5, 6, 7},
+		}, bt.BFS2())
+}

@@ -58,6 +58,32 @@ func (bt *BinaryTree) BFS() string {
 	return strings.Join(strArry, ",")
 }
 
+func (bt *BinaryTree) BFS2() [][]interface{} {
+	ret := [][]interface{}{}
+	queue := NewQueue()
+	queue.Push(bt.Root)
+
+	for ; !queue.IsEmpty(); {
+		cnt := queue.Size()
+		layer := []interface{}{}
+		for i := 0; i < cnt; i++ {
+			e := queue.Pop().(*BinaryTreeNode)
+			if IsNil(e) {
+				continue
+			}
+			layer = append(layer, e.Value)
+
+			queue.Push(e.Left)
+			queue.Push(e.Right)
+		}
+		if len(layer) != 0 {
+			ret = append(ret, layer)
+		}
+	}
+
+	return ret
+}
+
 //默认是宽度优先遍历
 func (bt *BinaryTree) String() string {
 	return bt.BFS()

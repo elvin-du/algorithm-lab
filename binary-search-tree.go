@@ -32,6 +32,7 @@ func InsertNode(value int, root *BinaryTreeNode) {
 		InsertNode(value, root.Left)
 	}
 }
+
 //剑指offer 查找搜索二叉树的第k个节点
 func FindKthNode(root *BinaryTreeNode, k *int) *BinaryTreeNode {
 	if !IsNil(root) {
@@ -52,4 +53,18 @@ func FindKthNode(root *BinaryTreeNode, k *int) *BinaryTreeNode {
 	}
 
 	return nil
+}
+
+//剑指offer 查找搜索二叉树的第k个节点
+func FindKthNode2(root *BinaryTreeNode, k *int, ret *BinaryTreeNode) {
+	if !IsNil(root) {
+		FindKthNode2(root.Left, k, ret)
+
+		*k--
+		if *k == 0 {
+			*ret = *root
+		}
+
+		FindKthNode2(root.Right, k, ret)
+	}
 }

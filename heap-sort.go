@@ -13,6 +13,12 @@ func BuildMaxHeap(data []int, size int) {
 	}
 }
 
+func InsertMaxHeap(data []int, newData int) []int {
+	data = append(data, newData)
+	BuildMaxHeap(data, len(data))
+	return data
+}
+
 func Heapify(data []int, index, size int) {
 	left := index*2 + 1
 	right := index*2 + 2

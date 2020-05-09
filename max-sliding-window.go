@@ -6,6 +6,7 @@ func MaxSlidingWindow(data []int, k int) []int {
 	dq := NewDequeue()
 
 	for i := 0; i < len(data); i++ {
+		//把小值弹出双端单调递减队列
 		for {
 			if !dq.IsEmpty() {
 				if data[dq.PeekBack().(int)] <= data[i] {
@@ -19,6 +20,7 @@ func MaxSlidingWindow(data []int, k int) []int {
 
 		dq.PushBack(i)
 
+		//是否已经超出滑动窗口
 		if dq.PeekFront().(int) <= i-k {
 			dq.PollFront()
 		}

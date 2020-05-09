@@ -40,3 +40,16 @@ func TestList_String(t *testing.T) {
 	l.PushFront(4)
 	assert.Equal(t, "4321", l.String())
 }
+
+func TestList_RemoveByIndex(t *testing.T) {
+	list2 := NewList()
+	list2.PushBack(1)
+	list2.PushBack(2)
+	list2.PushBack(3)
+	assert.Equal(t, 3, list2.Size)
+	assert.Equal(t, 3, list2.RemoveByIndex(list2.Size-1))
+	assert.Equal(t, 2, list2.Size)
+	assert.Equal(t, 2, list2.RemoveByIndex(list2.Size-1))
+	assert.Equal(t, 1, list2.Size)
+	assert.Equal(t, 1, list2.RemoveByIndex(list2.Size-1))
+}

@@ -31,3 +31,11 @@ func (dq *Dequeue) PeekBack() interface{} {
 func (dq *Dequeue) PeekFront() interface{} {
 	return dq.list.Head.Value
 }
+
+func (dq *Dequeue) IsEmpty() bool {
+	return dq.list.Size == 0
+}
+
+func (dq *Dequeue) Size() int {
+	return dq.list.Size
+}

@@ -108,6 +108,7 @@ func (l *List) Find(e interface{}) int {
 }
 
 func (l *List) RemoveByIndex(index int) interface{} {
+
 	if index >= l.Size {
 		return nil
 	}
@@ -131,6 +132,7 @@ func (l *List) RemoveByIndex(index int) interface{} {
 		l.Tail = target.Pre
 		target.Pre = nil
 		l.Tail.Next = nil
+		l.Size -= 1
 		return target.Value
 	}
 

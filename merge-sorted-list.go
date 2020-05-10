@@ -17,7 +17,8 @@ func MergeSortedList(l1, l2 *List) *List {
 				tmpL2Next := l2node.Next
 
 				prel1.Next = l2node
-				prel1.Next.Next = l1node
+				l2node.Next = l1node
+				
 				prel1 = prel1.Next
 
 				l2node = tmpL2Next

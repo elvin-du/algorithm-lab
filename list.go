@@ -24,6 +24,13 @@ func (l *List) String() string {
 	return str
 }
 
+func (l *List) Print() {
+	node := l.Head
+	for ; node != nil; node = node.Next {
+		fmt.Printf("%v,", node.Value)
+	}
+}
+
 func (l *List) PushBack(e interface{}) {
 	newNode := NewListNode(e)
 	l.Size += 1

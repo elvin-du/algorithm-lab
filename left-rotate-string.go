@@ -1,4 +1,4 @@
-//
+//剑指offer 左移字符串
 package algorithm_lab
 
 import "bytes"

@@ -1,6 +1,7 @@
 package algorithm_lab
 
 import (
+	"algorithm-lab/common"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -20,13 +21,13 @@ func TestFindKthNode(t *testing.T) {
 	assert.Equal(t, 11, FindKthNode(bt.Root, &k).Value)
 
 	k = 10
-	assert.Equal(t, true, IsNil(FindKthNode(bt.Root, &k)))
+	assert.Equal(t, true, common.IsNil(FindKthNode(bt.Root, &k)))
 }
 
 func TestFindKthNode2(t *testing.T) {
 	bt := CreateBST([]int{1, 7, 8, 4, 11, 6, 9})
 	k := 3
-	ret := &BinaryTreeNode{}
+	ret := &common.BinaryTreeNode{}
 	FindKthNode2(bt.Root, &k, ret)
 	assert.Equal(t, 6, ret.Value)
 
@@ -35,7 +36,7 @@ func TestFindKthNode2(t *testing.T) {
 	assert.Equal(t, 11, ret.Value)
 
 	k = 10
-	var ret2 *BinaryTreeNode = nil
+	var ret2 *common.BinaryTreeNode = nil
 	FindKthNode2(bt.Root, &k, ret2)
-	assert.Equal(t, true, IsNil(ret2))
+	assert.Equal(t, true, common.IsNil(ret2))
 }

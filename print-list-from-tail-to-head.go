@@ -1,9 +1,12 @@
 //剑指offer 从头到尾打印链表
 package algorithm_lab
 
-import "log"
+import (
+	"algorithm-lab/common"
+	"log"
+)
 
-func printListFromTailToHead(l *ListNode) {
+func printListFromTailToHead(l *common.ListNode) {
 	if l == nil {
 		return
 	}
@@ -11,6 +14,6 @@ func printListFromTailToHead(l *ListNode) {
 	log.Println(l.Value)
 }
 
-func PrintListFromTailToHead(l *List) {
+func PrintListFromTailToHead(l *common.List) {
 	printListFromTailToHead(l.Head)
 }

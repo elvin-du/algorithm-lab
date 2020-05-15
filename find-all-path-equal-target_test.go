@@ -1,16 +1,17 @@
 package algorithm_lab
 
 import (
+	"algorithm-lab/common"
 	"testing"
 )
 
 func TestFindAllPath(t *testing.T) {
-	bt := NewBinaryTree()
-	root := NewBinaryTreeNode(1)
-	child2 := NewBinaryTreeNode(2)
-	child3 := NewBinaryTreeNode(3)
-	child4 := NewBinaryTreeNode(4)
-	child5 := NewBinaryTreeNode(5)
+	bt := common.NewBinaryTree()
+	root := common.NewBinaryTreeNode(1)
+	child2 := common.NewBinaryTreeNode(2)
+	child3 := common.NewBinaryTreeNode(3)
+	child4 := common.NewBinaryTreeNode(4)
+	child5 := common.NewBinaryTreeNode(5)
 
 	bt.Root = root
 	root.SetLeft(child2)

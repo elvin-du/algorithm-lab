@@ -1,4 +1,4 @@
-package algorithm_lab
+package common
 
 import (
 	"github.com/stretchr/testify/assert"

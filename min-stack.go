@@ -1,14 +1,16 @@
 //leetcode 155
 package algorithm_lab
 
+import "algorithm-lab/common"
+
 type MinStack struct {
 	min   int
-	stack *Stack
+	stack *common.Stack
 }
 
 /** initialize your data structure here. */
 func Constructor() MinStack {
-	s := MinStack{stack: NewStack(100)}
+	s := MinStack{stack: common.NewStack(100)}
 	return s
 }
 

@@ -1,14 +1,16 @@
 //leetcode 225
 package algorithm_lab
 
+import "algorithm-lab/common"
+
 type MyStack struct {
-	queue1 *Queue
-	queue2 *Queue //辅助
+	queue1 *common.Queue
+	queue2 *common.Queue //辅助
 }
 
 /** Initialize your data structure here. */
 func NewMyStack() MyStack {
-	return MyStack{NewQueue(), NewQueue()}
+	return MyStack{common.NewQueue(), common.NewQueue()}
 }
 
 /** Push element x onto stack. */

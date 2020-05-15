@@ -1,15 +1,17 @@
 //剑指offer 删除链表中重复的节点
 package algorithm_lab
 
+import "algorithm-lab/common"
+
 var (
-	nilListNode *ListNode = nil
+	nilListNode *common.ListNode = nil
 )
 
-func DeleteDuplication(l *List) {
+func DeleteDuplication(l *common.List) {
 	if l.Head == nilListNode || l.Size == 1 {
 		return
 	}
-	vHead := NewListNode(0)
+	vHead := common.NewListNode(0)
 	vHead.Next = l.Head
 
 	pre, cur := vHead, vHead.Next
@@ -25,7 +27,7 @@ func DeleteDuplication(l *List) {
 	l.Head = vHead.Next
 }
 
-func deleteNode(node *ListNode) bool {
+func deleteNode(node *common.ListNode) bool {
 	duplication := false
 	for ; node != nilListNode && node.Next != nilListNode; {
 		if node.Value != node.Next.Value {

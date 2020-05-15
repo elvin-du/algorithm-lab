@@ -1,8 +1,10 @@
 //剑指offer 栈的压入和弹出序列
 package algorithm_lab
 
+import "algorithm-lab/common"
+
 func IsStackPopOrder(pushSequence, popSequence []int) bool {
-	stack := NewStack(100)
+	stack := common.NewStack(100)
 	i := 0
 	for p := 0; p < len(popSequence); {
 		if stack.Size() != 0 {

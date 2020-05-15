@@ -1,8 +1,10 @@
 //leetcode 20
 package algorithm_lab
 
+import "algorithm-lab/common"
+
 func isValid(s string) bool {
-	stack := NewStack(len(s))
+	stack := common.NewStack(len(s))
 	for _, right := range s {
 		if 0 < stack.Size() {
 			left := stack.Top()

@@ -1,9 +1,12 @@
 package algorithm_lab
 
-import "testing"
+import (
+	"algorithm-lab/common"
+	"testing"
+)
 
 func TestPrintListFromTailToHead(t *testing.T) {
-	l := NewList()
+	l := common.NewList()
 	l.PushBack(1)
 	l.PushBack(2)
 	l.PushBack(3)

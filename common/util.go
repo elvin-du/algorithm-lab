@@ -1,4 +1,4 @@
-package algorithm_lab
+package common
 
 import "reflect"
 

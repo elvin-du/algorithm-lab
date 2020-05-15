@@ -1,4 +1,4 @@
-package algorithm_lab
+package common
 
 type Queue struct {
 	List *List

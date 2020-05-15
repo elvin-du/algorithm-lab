@@ -1,19 +1,21 @@
 //剑指offer 树的子结构
 package algorithm_lab
 
-func HasSubtree(parent, sub *BinaryTree) bool {
+import "algorithm-lab/common"
+
+func HasSubtree(parent, sub *common.BinaryTree) bool {
 	subRoot := sub.Root
 
-	q := NewQueue()
+	q := common.NewQueue()
 	q.Push(parent.Root)
 	for ; !q.IsEmpty(); {
 		count := q.Size()
 		for i := 0; i < count; i++ {
-			e := q.Pop().(*BinaryTreeNode)
-			if !IsNil(e.Left) {
+			e := q.Pop().(*common.BinaryTreeNode)
+			if !common.IsNil(e.Left) {
 				q.Push(e.Left)
 			}
-			if !IsNil(e.Right) {
+			if !common.IsNil(e.Right) {
 				q.Push(e.Right)
 			}
 
@@ -28,12 +30,12 @@ func HasSubtree(parent, sub *BinaryTree) bool {
 	return false
 }
 
-func IsBTSame(a, b *BinaryTreeNode) bool {
-	if IsNil(a) && IsNil(b) {
+func IsBTSame(a, b *common.BinaryTreeNode) bool {
+	if common.IsNil(a) && common.IsNil(b) {
 		return true
 	}
 
-	if (!IsNil(a) && IsNil(b)) || (!IsNil(b) && IsNil(a)) {
+	if (!common.IsNil(a) && common.IsNil(b)) || (!common.IsNil(b) && common.IsNil(a)) {
 		return false
 	}
 
@@ -44,16 +46,16 @@ func IsBTSame(a, b *BinaryTreeNode) bool {
 	return IsBTSame(a.Left, b.Left) && IsBTSame(a.Right, b.Right)
 }
 
-func IsSubTree(parent, sub *BinaryTreeNode) bool {
-	if IsNil(parent) && IsNil(sub) {
+func IsSubTree(parent, sub *common.BinaryTreeNode) bool {
+	if common.IsNil(parent) && common.IsNil(sub) {
 		return true
 	}
 
-	if !IsNil(parent) && IsNil(sub) {
+	if !common.IsNil(parent) && common.IsNil(sub) {
 		return true
 	}
 
-	if !IsNil(sub) && IsNil(parent) {
+	if !common.IsNil(sub) && common.IsNil(parent) {
 		return false
 	}
 

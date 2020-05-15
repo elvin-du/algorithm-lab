@@ -1,24 +1,25 @@
 package algorithm_lab
 
 import (
+	"algorithm-lab/common"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
 func TestPrintBinaryTreeAsZWordStyle(t *testing.T) {
-	tree := NewBinaryTree()
-	root := NewBinaryTreeNode(1)
-	child2 := NewBinaryTreeNode(2)
-	child3 := NewBinaryTreeNode(3)
-	child4 := NewBinaryTreeNode(4)
-	child5 := NewBinaryTreeNode(5)
-	child6 := NewBinaryTreeNode(6)
-	child7 := NewBinaryTreeNode(7)
-	child8 := NewBinaryTreeNode(8)
-	child9 := NewBinaryTreeNode(9)
-	child10 := NewBinaryTreeNode(10)
-	child11 := NewBinaryTreeNode(11)
-	child12 := NewBinaryTreeNode(12)
+	tree := common.NewBinaryTree()
+	root := common.NewBinaryTreeNode(1)
+	child2 := common.NewBinaryTreeNode(2)
+	child3 := common.NewBinaryTreeNode(3)
+	child4 := common.NewBinaryTreeNode(4)
+	child5 := common.NewBinaryTreeNode(5)
+	child6 := common.NewBinaryTreeNode(6)
+	child7 := common.NewBinaryTreeNode(7)
+	child8 := common.NewBinaryTreeNode(8)
+	child9 := common.NewBinaryTreeNode(9)
+	child10 := common.NewBinaryTreeNode(10)
+	child11 := common.NewBinaryTreeNode(11)
+	child12 := common.NewBinaryTreeNode(12)
 
 	tree.Root = root
 	root.SetLeft(child2)
@@ -39,7 +40,7 @@ func TestPrintBinaryTreeAsZWordStyle(t *testing.T) {
 	child6.SetLeft(child12)
 
 	assert.Equal(t, "1 3 2 4 5 6 7 12 11 10 9 8 ", PrintBinaryTreeAsZWordStyle(tree))
-	child7.SetLeft(NewBinaryTreeNode(14))
+	child7.SetLeft(common.NewBinaryTreeNode(14))
 
 	assert.Equal(t, "1 3 2 4 5 6 7 14 12 11 10 9 8 ", PrintBinaryTreeAsZWordStyle(tree))
 }

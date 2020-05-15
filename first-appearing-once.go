@@ -2,13 +2,14 @@
 package algorithm_lab
 
 import (
+	"algorithm-lab/common"
 	"io"
 )
 
 func FirstAppearingOnce(r io.Reader) byte {
 	m := [256]byte{}
 	b := make([]byte, 1)
-	queue := NewQueue()
+	queue := common.NewQueue()
 
 	for ; ; {
 		_, err := r.Read(b)

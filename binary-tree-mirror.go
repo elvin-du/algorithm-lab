@@ -1,12 +1,14 @@
 //剑指offer 二叉树镜像
 package algorithm_lab
 
-func BinaryTreeMirror(tree *BinaryTree) {
+import "algorithm-lab/common"
+
+func BinaryTreeMirror(tree *common.BinaryTree) {
 	binaryTreeMirror(tree.Root)
 }
 
-func binaryTreeMirror(node *BinaryTreeNode) {
-	if NilBinaryTreeNode == node {
+func binaryTreeMirror(node *common.BinaryTreeNode) {
+	if common.NilBinaryTreeNode == node {
 		return
 	}
 

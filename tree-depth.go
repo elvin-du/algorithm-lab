@@ -1,8 +1,10 @@
 //剑指offer 二叉树的深度
 package algorithm_lab
 
-func TreeDepth(root *BinaryTreeNode) int {
-	if IsNil(root) {
+import "algorithm-lab/common"
+
+func TreeDepth(root *common.BinaryTreeNode) int {
+	if common.IsNil(root) {
 		return 0
 	}
 

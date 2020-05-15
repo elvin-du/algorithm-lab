@@ -1,17 +1,20 @@
 //剑指offer 判断是否是平衡二叉树
 package algorithm_lab
 
-import "math"
+import (
+	"algorithm-lab/common"
+	"math"
+)
 
 var isBalanced = true
 
-func IsBalancedBinaryTree(root *BinaryTreeNode) bool {
+func IsBalancedBinaryTree(root *common.BinaryTreeNode) bool {
 	height(root)
 	return isBalanced
 }
 
-func height(root *BinaryTreeNode) int {
-	if IsNil(root) {
+func height(root *common.BinaryTreeNode) int {
+	if common.IsNil(root) {
 		return 0
 	}
 	left := height(root.Left)

@@ -1,13 +1,15 @@
 //剑指offer 是否是对称二叉树
 package algorithm_lab
 
-func IsSymmetricalBinaryTree(tree *BinaryTree) bool {
+import "algorithm-lab/common"
+
+func IsSymmetricalBinaryTree(tree *common.BinaryTree) bool {
 	return isSymmetricalBinaryTree(tree.Root)
 }
 
-func isSymmetricalBinaryTree(node *BinaryTreeNode) bool {
-	if IsNil(node.Left) || IsNil(node.Right) {
-		if IsNil(node.Left) && IsNil(node.Right) {
+func isSymmetricalBinaryTree(node *common.BinaryTreeNode) bool {
+	if common.IsNil(node.Left) || common.IsNil(node.Right) {
+		if common.IsNil(node.Left) && common.IsNil(node.Right) {
 			return true
 		}
 

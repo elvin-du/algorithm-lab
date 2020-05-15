@@ -1,13 +1,15 @@
 package algorithm_lab
 
+import "algorithm-lab/common"
+
 type MyQueue struct {
-	stack1 *Stack
-	stack2 *Stack
+	stack1 *common.Stack
+	stack2 *common.Stack
 }
 
 /** Initialize your data structure here. */
 func NewMyQueue() MyQueue {
-	return MyQueue{NewStack(1000), NewStack(1000)}
+	return MyQueue{common.NewStack(1000), common.NewStack(1000)}
 }
 
 /** Push element x to the back of queue. */

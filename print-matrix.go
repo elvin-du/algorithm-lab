@@ -1,10 +1,12 @@
 //剑指offer 顺时针打印矩阵
 package algorithm_lab
 
+import "algorithm-lab/common"
+
 func PrintMatrix(data [][]int) {
 	r1, r2 := 0, len(data)-1
 	c1, c2 := 0, len(data[0])-1
-	list := NewList()
+	list := common.NewList()
 
 	for ; r1 <= r2 && c1 <= c2; {
 		for i := c1; i <= c2; i++ {

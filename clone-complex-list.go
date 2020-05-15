@@ -1,6 +1,8 @@
 //剑指offer 复制复杂链表
 package algorithm_lab
 
+import "algorithm-lab/common"
+
 type ComplexListNode struct {
 	Next   *ComplexListNode
 	Random *ComplexListNode
@@ -18,7 +20,7 @@ func CloneComplexList(head *ComplexListNode) *ComplexListNode {
 }
 
 func cloneComplexListNode(head *ComplexListNode) {
-	for node := head; !IsNil(node); {
+	for node := head; !common.IsNil(node); {
 		newNode := NewComplexListNode(node.Value)
 		newNode.Random = node.Random
 
@@ -32,9 +34,9 @@ func cloneComplexListNode(head *ComplexListNode) {
 
 func ConnectSiblingNodes(head *ComplexListNode) {
 	i := 1
-	for node := head; !IsNil(node); {
+	for node := head; !common.IsNil(node); {
 		if i%2 == 0 {
-			if !IsNil(node.Random) {
+			if !common.IsNil(node.Random) {
 				node.Random = node.Random.Next
 			}
 		}
@@ -46,8 +48,8 @@ func ConnectSiblingNodes(head *ComplexListNode) {
 func ReconnectNodes(head *ComplexListNode) *ComplexListNode {
 	newHead := head.Next
 
-	for node := newHead; !IsNil(node) && !IsNil(node.Next); {
-		if !IsNil(node.Next) {
+	for node := newHead; !common.IsNil(node) && !common.IsNil(node.Next); {
+		if !common.IsNil(node.Next) {
 			node.Next = node.Next.Next
 			node = node.Next
 		}

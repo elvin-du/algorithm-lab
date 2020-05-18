@@ -19,6 +19,7 @@ func MaxHeapPoll(data *[]int) int {
 }
 
 func BuildMaxHeap(data []int, size int) {
+	//从最后一个非叶子节点开始往前堆化
 	for l := size/2 - 1; l >= 0; l-- {
 		Heapify(data, l, size)
 	}
@@ -35,6 +36,7 @@ func Heapify(data []int, index, size int) {
 	right := index*2 + 2
 	largestIndex := index
 
+	//找到最大值的索引
 	if left < size {
 		if data[left] > data[largestIndex] {
 			largestIndex = left

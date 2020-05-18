@@ -1,4 +1,4 @@
-package algorithm_lab
+package code_interviews
 
 import (
 	"algorithm-lab/common"
@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func TestIsSymmetricalBinaryTree(t *testing.T) {
+func TestPrintMulLine(t *testing.T) {
 	tree := common.NewBinaryTree()
 	root := common.NewBinaryTreeNode(1)
 	tree.Root = root
@@ -27,5 +27,5 @@ func TestIsSymmetricalBinaryTree(t *testing.T) {
 	child2.SetLeft(child5)
 	child2.SetRight(child6)
 
-	assert.Equal(t, true, IsSymmetricalBinaryTree(tree))
+	assert.Equal(t,[]string{"1", "22", "4334"},PrintMulLine(tree.Root))
 }

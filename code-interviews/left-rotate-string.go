@@ -3,13 +3,15 @@ package code_interviews
 import "bytes"
 
 func LeftRotateString(str string, k int) string {
-	s := bytes.Runes([]byte(str))
+	s1 := bytes.Runes([]byte(str))
+	s := make([]rune,len(s1))
+	copy(s,s1)
 	left := s[:k]
 	right := s[k:]
 	rotate(left)
 	rotate(right)
 	rotate(s)
-	return str
+	return string(s)
 }
 
 func rotate(s []rune) {

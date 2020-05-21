@@ -2,7 +2,6 @@ package code_interviews
 
 import (
 	"algorithm-lab/common"
-	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
@@ -31,9 +30,9 @@ func TestSerializeBT(t *testing.T) {
 	t.Log(s)
 }
 
-func TestDeserialize(t *testing.T) {
-	str := []string{"1", "2", "4", "$", "$", "3", "$", "$", "2", "3", "$", "$", "4", "$", "$"}
-	root := Deserialize(str)
-	SerializeBT(root)
-	assert.Equal(t, str, s)
-}
+//func TestDeserialize(t *testing.T) {
+//	str := []string{"1", "2", "4", "$", "$", "3", "$", "$", "2", "3", "$", "$", "4", "$", "$"}
+//	root := Deserialize(str)
+//	SerializeBT(root)
+//	assert.Equal(t, str, s)
+//}

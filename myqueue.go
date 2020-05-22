@@ -43,7 +43,7 @@ func (this *MyQueue) Empty() bool {
 
 /**
  * Your MyQueue object will be instantiated and called as such:
- * obj := Constructor();
+ * obj := Constructor2();
  * obj.Push(x);
  * param_2 := obj.Pop();
  * param_3 := obj.Peek();

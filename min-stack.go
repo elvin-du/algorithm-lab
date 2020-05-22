@@ -9,7 +9,7 @@ type MinStack struct {
 }
 
 /** initialize your data structure here. */
-func Constructor() MinStack {
+func Constructor2() MinStack {
 	s := MinStack{stack: common.NewStack(100)}
 	return s
 }
@@ -56,7 +56,7 @@ func (this *MinStack) GetMin() int {
 
 /**
  * Your MinStack object will be instantiated and called as such:
- * obj := Constructor();
+ * obj := Constructor2();
  * obj.Push(x);
  * obj.Pop();
  * param_3 := obj.Top();
